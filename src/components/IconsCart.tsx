@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux"
+import { useEffect } from "react"
 import { motion } from "framer-motion"
 import { InitialState, Product } from "../interfaces"
 import Burger from '../assets/burger.png'
@@ -12,6 +13,15 @@ interface Props {
 const IconsCart = ({ handleCart } : Props) => {
 
     const listPriceAndIcons = useSelector<InitialState, Product[]>(state => state.listPriceAndIcons)
+
+    useEffect(() => {
+        // Precargar las imágenes al montar el componente
+        const preloadImages = [Burger, Beer, Fries];
+        preloadImages.forEach((image) => {
+          const img = new Image()
+          img.src = image
+        })
+      }, [])
     
     // IMPORTANTE:
     // NO HAY QUE DARLES KEY A LOS ELEMENTOS QUE SE VAN RENDERIZANDO
