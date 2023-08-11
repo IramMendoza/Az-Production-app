@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar"
 import Cart from "../components/Cart"
 import Menu from "../components/Menu"
 import Tables from "../components/Tables"
+import Admin from "./Admin"
 
 
 const Movil = () => {
@@ -18,6 +19,7 @@ const Movil = () => {
       <Navbar/>
       <div className="flex">
         {menuTables === "tables" ? <Tables /> : <Menu />}
+        <Admin/>
       </div>
       <Cart/>
     </div>

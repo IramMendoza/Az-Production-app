@@ -12,6 +12,7 @@ import PayOrder from "./PayOrder"
 import { changeNavbar } from "../actions"
 import { changeAdmin } from "../actions"
 
+
 const Navbar = () => {
 
   const dispatch = useDispatch()
@@ -54,6 +55,7 @@ const Navbar = () => {
 
   function handleClickAdmin () {
     dispatch( changeAdmin('open'))
+    
   }
 
   // El condicional funciona para poner un boton de salida al modo de pago del navbar

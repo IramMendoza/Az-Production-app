@@ -17,6 +17,7 @@ interface Order {
 }
 
 const Admin = () => {
+  
   const [jsonResponse, setJsonResponse] = useState<Order[]>([])
   const [error, setError] = useState<string>("")
   const adminState = useSelector((state: InitialState ) => state.admin)
@@ -28,12 +29,13 @@ const Admin = () => {
   }
 
   function handleClickAdmin () {
+    adminState === 'close' ? animate.start('close') : animate.start('open')
     dispatch( changeAdmin('close'))
   }
 
   useEffect( () => {
     axios
-    .get("http://localhost:8000/api_az_app/")
+    .get("http://localhost:8000/api_app_az/")
     .then(response => setJsonResponse(response.data))
     .catch(error => setError(error))
     }, []
@@ -42,7 +44,7 @@ const Admin = () => {
   return (
 
     <motion.div 
-    className="backdrop-blur-sm bg-white/70 fixed bottom-0 w-screen rounded-t-3xl"
+    className="backdrop-blur-sm bg-white/70 fixed left-0 w-[80%] rounded-t-3xl"
     initial={{ y : 0 }}
     animate={animate}
     variants={variants}
