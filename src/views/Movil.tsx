@@ -16,7 +16,7 @@ const Movil = () => {
   return (
     <div>
       <Navbar/>
-      <div>
+      <div className="flex">
         {menuTables === "tables" ? <Tables /> : <Menu />}
       </div>
       <Cart/>

@@ -29,6 +29,7 @@ export interface InitialState {
   circleAdd : boolean 
   currentOrder : Table
   navbar : string
+  admin : string
 }
 
 export interface ProductCardProps {

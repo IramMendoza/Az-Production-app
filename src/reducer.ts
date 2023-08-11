@@ -4,6 +4,7 @@ import { CHANGE_TO_TABLES } from "./actions"
 import { ADD_PRODUCT_TO_LIST } from "./actions"
 import { DELETE_PRODUCT_FROM_LIST } from "./actions"
 import { DELETE_ALL_PRODUCTS_FROM_LIST } from "./actions"
+import { CHANGE_ADMIN} from "./actions"
 import { ADD_ORDER_TO_TABLE } from "./actions"
 import { SEE_CURRENT_ORDER } from "./actions"
 import { UPDATE_TABLE } from "./actions"
@@ -28,7 +29,9 @@ const initialState : InitialState = {
         client : '',
         tableNumber : 0
     },
-    navbar : 'close'
+    navbar : 'close',
+    admin : 'close'
+
 }
 
 
@@ -163,6 +166,14 @@ const reducer : Reducer = ( state = initialState, action : Action ) => {
                 ...state,
                 navbar : 'open',
                 cart : 'close'
+            }
+
+        case CHANGE_ADMIN:
+            return {
+                ...state,
+                admin : action.payload,
+                navbar : 'close',
+                cart : 'close',
             }
         
         case PAY_ORDER:

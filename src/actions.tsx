@@ -108,3 +108,13 @@ export const payOrder = (orderClient : string) => {
         payload : orderClient
     }
 }
+
+export const CHANGE_ADMIN = "CHANGE_ADMIN"
+
+export const changeAdmin = (adminState : string) => {
+    return {
+        type : CHANGE_ADMIN,
+        payload : adminState
+    }
+
+}

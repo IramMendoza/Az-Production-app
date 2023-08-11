@@ -10,6 +10,7 @@ import TablesIcon from '../assets/tableIconPng.png'
 import AddCircle from "../components/AddCircle"
 import PayOrder from "./PayOrder"
 import { changeNavbar } from "../actions"
+import { changeAdmin } from "../actions"
 
 const Navbar = () => {
 
@@ -51,6 +52,10 @@ const Navbar = () => {
     dispatch( changeNavbar('close'))
   }
 
+  function handleClickAdmin () {
+    dispatch( changeAdmin('open'))
+  }
+
   // El condicional funciona para poner un boton de salida al modo de pago del navbar
 
   return (
@@ -85,7 +90,9 @@ const Navbar = () => {
             <div className=" w-full flex justify-around">
               <img
               className="w-[20px] mt-3" 
-              src={Logo}/>
+              src={Logo}
+              onClick={handleClickAdmin}
+              />
 
               <img
               className="w-[30px] m-2 mr-1 mt-3"
