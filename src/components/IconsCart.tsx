@@ -16,7 +16,7 @@ const IconsCart = ({ handleCart } : Props) => {
 
     useEffect(() => {
         // Precargar las imágenes al montar el componente
-        const preloadImages = [Burger, Beer, Fries];
+        const preloadImages = [Burger, Beer, Fries]
         preloadImages.forEach((image) => {
           const img = new Image()
           img.src = image

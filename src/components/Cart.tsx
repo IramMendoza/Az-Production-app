@@ -25,6 +25,7 @@ const Cart = () => {
     close : { y : [-30,0] }
   }
 
+  const trashIcon = TrashIcon
 
   function handleCart () {
     cartState === 'close' ? animate.start('close') : animate.start('open')
@@ -70,7 +71,7 @@ const Cart = () => {
             <div className="flex justify-center pb-1 pt-1">
               <div className="bg-gradient-to-r from-rose-600 to-pink-600 flex justify-center p-3 rounded-full">
                 <img  className="w-[20px]"
-                      src={TrashIcon} 
+                      src={trashIcon} 
                       onClick={handleDeleteAll}/>
               </div>
             </div>
